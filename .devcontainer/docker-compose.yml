@@ -1,0 +1,21 @@
+services:
+  app:
+    build:
+      # The build context should point to the root of the project
+      context: ..
+      dockerfile: ./.devcontainer/Dockerfile
+      args:
+        HOST_UID: ${UID}
+        HOST_GID: ${GID}
+    container_name: laravel-kintone-connect-dev-container
+    volumes:
+      # Mount the project root into the container
+      - ..:/var/php-package/laravel-kintone-connect
+    # ports:
+    #   - "999:999"
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
