@@ -3,8 +3,8 @@
 namespace nietocjr\LaravelKintoneConnect\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 use nietocjr\LaravelKintoneConnect\LaravelKintoneConnectServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {

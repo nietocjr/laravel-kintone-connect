@@ -2,9 +2,9 @@
 
 namespace nietocjr\LaravelKintoneConnect;
 
+use nietocjr\LaravelKintoneConnect\Commands\LaravelKintoneConnectCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use nietocjr\LaravelKintoneConnect\Commands\LaravelKintoneConnectCommand;
 
 class LaravelKintoneConnectServiceProvider extends PackageServiceProvider
 {
@@ -17,9 +17,9 @@ class LaravelKintoneConnectServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-kintone-connect')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel_kintone_connect_table')
-            ->hasCommand(LaravelKintoneConnectCommand::class);
+            ->hasConfigFile();
+        // ->hasViews()
+        // ->hasMigration('create_laravel_kintone_connect_table')
+        // ->hasCommand(LaravelKintoneConnectCommand::class);
     }
 }
