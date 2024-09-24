@@ -39,7 +39,7 @@ class LaravelKintoneConnect
     public static function updateByField(string $field, string $value, string $param, string|array $data)
     {
         $requestData = [
-            'app' => env('KINTONE_APPID'),
+            'app' => Config::get('kintone-connect.lkc_app_id'),
             'updateKey' => [
                 'field' => $field,
                 'value' => $value,
@@ -56,7 +56,7 @@ class LaravelKintoneConnect
 
     private static function request(array $requestData, string $method, bool $multi = false): string|bool
     {
-        $url = 'https://'.Config::get('kintone-connect.kintone_domain').'.cybozu.com/k/v1/';
+        $url = 'https://'.Config::get('kintone-connect.lkc_domain').'.cybozu.com/k/v1/';
         if ($multi) {
             $resKey = 'records';
         } else {
@@ -65,7 +65,7 @@ class LaravelKintoneConnect
         $url .= $resKey.'.json';
 
         $header = [
-            'X-Cybozu-API-Token' => Config::get('kintone-connect.kintone_token'),
+            'X-Cybozu-API-Token' => Config::get('kintone-connect.lkc_token'),
         ];
 
         $response = Http::withHeaders($header)->$method($url, $requestData);
