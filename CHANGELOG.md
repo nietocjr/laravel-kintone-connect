@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-kintone-connect` will be documented in this file.
 
+## Hotfix - 2024-09-24
+
+### What's Changed
+
+* fix config file names by @nietocjr in https://github.com/nietocjr/laravel-kintone-connect/pull/2
+
+**Full Changelog**: https://github.com/nietocjr/laravel-kintone-connect/compare/0.1.0...0.1.1
+
 ## 0.1.0 - 2024-09-24
 
 ### What's Changed
