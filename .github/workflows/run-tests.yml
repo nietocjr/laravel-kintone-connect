@@ -41,9 +41,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          composer update --${{ matrix.stability }} --prefer-dist --no-interaction -W \
-            --with "orchestra/testbench:${{ matrix.testbench }}" \
-            --with "nesbot/carbon:${{ matrix.os == 'windows-latest' && '^^^' || '' }}^2.63"
+          composer update --${{ matrix.stability }} --prefer-dist --no-interaction -W --with "orchestra/testbench:${{ matrix.testbench }}"
 
       - name: List Installed Dependencies
         run: composer show -D
