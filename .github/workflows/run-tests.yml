@@ -35,15 +35,19 @@ jobs:
           coverage: none
 
       - name: Setup problem matchers
+        shell: bash
         run: |
           echo "::add-matcher::${{ runner.tool_cache }}/php.json"
           echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
       - name: Install dependencies
+        shell: bash
         run: composer update --${{ matrix.stability }} --prefer-dist --no-interaction -W --with "orchestra/testbench:${{ matrix.testbench }}"
 
       - name: List Installed Dependencies
+        shell: bash
         run: composer show -D
 
       - name: Execute tests
+        shell: bash
         run: vendor/bin/pest --ci
