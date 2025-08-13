@@ -40,9 +40,7 @@ jobs:
           echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
       - name: Install dependencies
-        run: |
-          composer update --${{ matrix.stability }} --prefer-dist --no-interaction -W \
-            --with "orchestra/testbench:${{ matrix.testbench }}"
+        run: composer update --${{ matrix.stability }} --prefer-dist --no-interaction -W --with "orchestra/testbench:${{ matrix.testbench }}"
 
       - name: List Installed Dependencies
         run: composer show -D
